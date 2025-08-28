@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DealDrop Grocery - Login</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #d9f99d, #f0fdf4, #bbf7d0);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+    .card {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+      padding: 32px;
+      width: 100%;
+      max-width: 380px;
+      animation: slideUp 0.6s ease;
+    }
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+    .logo span {
+      font-size: 22px;
+      font-weight: bold;
+      color: #15803d;
+    }
+    .logo-icon {
+      width: 30px;
+      height: 30px;
+      background: #16a34a;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+    }
+    .subtitle {
+      text-align: center;
+      color: #6b7280;
+      margin-bottom: 24px;
+    }
+    label {
+      display: block;
+      font-size: 14px;
+      font-weight: 500;
+      margin-bottom: 6px;
+      color: #374151;
+    }
+    input {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid #d1d5db;
+      border-radius: 10px;
+      font-size: 14px;
+      margin-bottom: 16px;
+    }
+    input:focus {
+      outline: none;
+      border-color: #16a34a;
+      box-shadow: 0 0 0 2px #bbf7d0;
+    }
+    .btn {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 10px;
+      background: #16a34a;
+      color: white;
+      font-weight: 600;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .btn:hover {
+      background: #15803d;
+    }
+    .links {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 16px;
+      font-size: 14px;
+    }
+    .links a {
+      color: #16a34a;
+      text-decoration: none;
+    }
+    .links a:hover {
+      text-decoration: underline;
+    }
+    .footer {
+      margin-top: 24px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 6px;
+      color: #6b7280;
+      font-size: 14px;
+    }
+    .cart-icon {
+      width: 16px;
+      height: 16px;
+      background: #9ca3af;
+      border-radius: 3px;
+      position: relative;
+    }
+    .cart-icon::before {
+      content: '';
+      position: absolute;
+      top: -6px;
+      left: 4px;
+      width: 8px;
+      height: 6px;
+      background: #9ca3af;
+      border-radius: 2px;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <!-- Logo -->
+    <div class="logo">
+      <div class="logo-icon">🍃</div>
+      <span>DealDrop Grocery</span>
+    </div>
+
+    <p class="subtitle">Fresh deals for your daily needs. Login to continue.</p>
+
+    <!-- Form -->
+    <form onsubmit="handleLogin(event)">
+      <label for="email">Email</label>
+      <input type="email" id="email" placeholder="you@example.com" required />
+
+      <label for="password">Password</label>
+      <input type="password" id="password" placeholder="••••••••" required />
+
+      <button type="submit" class="btn">Login</button>
+    </form>
+
+    <!-- Links -->
+    <div class="links">
+      <a href="#">Forgot password?</a>
+      <a href="#">Create account</a>
+    </div>
+
+    <!-- Footer slogan -->
+    <div class="footer">
+      <div class="cart-icon"></div>
+      <span>Shop smart, save more!</span>
+    </div>
+  </div>
+
+  <script>
+    function handleLogin(e) {
+      e.preventDefault();
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+      console.log("Login attempt:", { email, password });
+      // TODO: call backend /auth/login API
+      alert("Login clicked!");
+    }
+  </script>
+</body>
+</html>
